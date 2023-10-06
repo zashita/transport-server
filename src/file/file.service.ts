@@ -25,6 +25,16 @@ export class FileService{
         } catch (error){
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
+        // try{
+        //     // const fileType = 'image';
+        //     const ext = '.jpeg';
+        //     const fileName = uuid.v4() + ext;
+        //     const filePath = path.resolve(`static/`, fileName)
+        //     file.mv(filePath)
+        //     return fileName;
+        // }catch (e){
+        //     console.log(e)
+        // }
     }
 
     // deletefile(fileName: string)

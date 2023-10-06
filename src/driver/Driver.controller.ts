@@ -10,12 +10,12 @@ export class DriverController{
   }
   @Get()
   async getAll(){
-    return this.driverService.getAll();
+    return await this.driverService.getAll();
   }
 
   @Get(':id')
   async getOne(@Param('id') id: ObjectId){
-      return this.driverService.getOne(id)
+      return await this.driverService.getOne(id)
   }
 
   @Post()
@@ -24,10 +24,10 @@ export class DriverController{
   ]))
   async create(@UploadedFiles() files, @Body() dto: createDriverDto){
     console.log(files)
-      return this.driverService.create(dto, files.photo[0])
+      return await this.driverService.create(dto, files.photo[0])
   }
 
-  @Delete()
+  @Delete(':id')
   async delete(@Param('id') id: ObjectId){
     return await this.driverService.delete(id);
   }

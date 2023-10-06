@@ -20,8 +20,8 @@ async getOne(id: ObjectId): Promise<Driver>{
 
 async create(dto: createDriverDto, picture): Promise<Driver>{
     const filePath = this.fileService.createFile(picture);
-    const track = this.driverModel.create({...dto, photo: filePath, ads: []})
-  return track
+    const driver = this.driverModel.create({...dto, photo: filePath, ads: []})
+  return driver;
 }
 
 async delete(id:ObjectId): Promise<Driver>{

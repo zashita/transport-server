@@ -4,6 +4,7 @@ import {MongooseModule} from "@nestjs/mongoose";
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from "path"
 import { DriverModule } from "./driver/Driver.module";
+import { AdsModule } from "./ads/Ads.module";
 const password = 'swMKkS9ANKd3WEMg';
 
 
@@ -13,7 +14,7 @@ const password = 'swMKkS9ANKd3WEMg';
       rootPath: path.resolve(__dirname, 'static'),
     }),
     MongooseModule.forRoot(`mongodb+srv://velich:${password}@transport.awrtyve.mongodb.net/?retryWrites=true&w=majority`),
-    DriverModule]
+    DriverModule, AdsModule]
 })
 
 
